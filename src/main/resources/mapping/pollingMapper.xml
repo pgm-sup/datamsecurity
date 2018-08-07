@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyc.mapper.PollingMapper">
+	<insert id="savePolling" parameterType="java.util.List">
+		insert into polling
+		(id,iconNumber,eventUrl,eventType,iconName,STREETNAME,imgUrl,version,saveTime, view)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(
+			id, #{item.iconNumber},
+			#{item.eventUrl},
+			#{item.eventType},
+			#{item.iconName},
+			#{item.STREETNAME},
+			#{item.imgUrl},
+			#{item.version},
+			now(),
+			#{item.view}
+			)
+		</foreach>
+	</insert>
+
+	<select id="query" resultType="com.wyc.entity.Polling">
+		select * from polling where STREETNAME = #{street}
+		<if test="version != null and version != ''">
+			and version=#{version}
+		</if>
+		<choose>
+			<when test="version !=null and version != ''">
+				and version = #{version}
+			</when>
+			<otherwise>
+				and version = (select max(version) from polling)
+			</otherwise>
+		</choose>
+	</select>
+
+	<update id="updatePollings" parameterType="java.util.List">
+		update polling set saveTime = now()
+		where id in
+		<foreach collection="list" index="index" item="item"
+			separator="," open="(" close=")">
+			#{item.id}
+		</foreach>
+	</update>
+</mapper> 

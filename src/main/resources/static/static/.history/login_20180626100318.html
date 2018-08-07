@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="../login/css/reset.css" media="all">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="../login/css/login.css" media="all">
+</head>
+
+
+<body onload="fitview()">
+    <div id='m_wrap' class='m_wrap' m_fit='viewport'>
+        <div class='m_content'>
+            <div class='m_left'>
+                <div class='yuansuWrap'>
+                    <img class='yuansuImg' src="images/元素.png" alt="">
+                </div>
+            </div>
+            <div class='m_right'>
+                <div class='logoWrap'>
+                    <img class='logoImg' src="images/城运中心拷贝.png" alt="">
+                </div>
+                <h3>浦东新区城市运行管理中心街镇分中心</h3>
+                <form id="loginForm">
+                    <div style='position: relative; margin: 2.5vw 0 0 0;'>
+                        <div class="form-group m_form-group01">
+                            <input class="form-control" type="text" name='id' id='id' placeholder="用户名">
+                        </div>
+                        <div class='namelogDiv'>
+                            <img class='nameImg' src="images/形状13.png" alt="">
+                        </div>
+                    </div>
+                    <div style='position: relative;'>
+                        <div class='form-groupWrap'>
+                            <div class='form-group m_form-group02'>
+                                <input class="form-control" type="password" name='pwd' id='pwd' placeholder="密码">
+                            </div>
+                        </div>
+                        <div class='pwdlogDiv'>
+                            <img class='pwdImg' src="images/形状14.png" alt="">
+                        </div>
+                    </div>
+                    <div class='m_form-group03'>
+                        <input id='check' type="checkbox">
+                        <span class='pwdWord'>记住密码</span>
+                    </div>
+                    <div class="form-group m_form-group04">
+                        <button !disabled type="button" id='loginbtn' class="btn">登&nbsp;&nbsp;录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class='m_bgWrap'>
+            <img class='bgImg' src="images/宽底.png" alt="">
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="../lib/axios/axios-0.18.0.min.js"></script>
+    <script src="js/md5.js"></script>
+    <script>
+        $(function () {
+            //  axios({
+            //             method: 'post',
+            //             url: 'http://192.168.1.119:8080/login_in',
+            //             data: {
+            //                 userCode: $('#id').val(),
+            //             userPwd: hex_md5($('#pwd').val()),
+            //             },
+            //             headers:{
+            //                 'Content-Type':'application/x-www-form-urlencoded'
+            //             }
+            //         })
+            //         .then(function (response) {
+            //             console.log(response);
+            //         })
+            //         .catch(function (error) {
+            //             console.log(error);
+            //         });
+            $('#loginbtn').click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "http://192.168.1.119:8080/login_in",
+                    data: {
+                        userCode: $('#id').val(),
+                        userPwd: hex_md5($('#pwd').val()),
+                    },
+                    success:function(res){
+                    var sessionId=res.data;console.log(res.data);
+                    localStorage.setItem('sessionId',sessionId);
+                    window.location.href='./zhonzhuan.html';
+                }
+                })
+            })
+        });
+        var fitview = function () {
+            var scales = [];
+            if ($('#m_wrap').attr('m_fit') == 'viewport') {
+                scales[0] = window.innerWidth / parseInt($('#m_wrap').css('width'));
+                scales[1] = window.innerHeight / parseInt($('#m_wrap').css('height'));
+                $('#m_wrap')[0].style.transformOrigin = '0px top 0px',
+                    $('#m_wrap')[0].style.transform = 'scale(' + scales.join() + ')';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

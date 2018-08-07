@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyc.mapper.SchduleMapper">
+	<insert id="addSchdule" parameterType="java.util.List">
+		insert into schdule
+		(id,STREETNAME,value3,value2,value1,version,saveTime, view)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(
+			id, #{item.STREETNAME},
+			#{item.value3},
+			#{item.value2},
+			#{item.value1},
+			#{item.version},
+			now(),
+			#{item.view}
+			)
+		</foreach>
+	</insert>
+
+	<select id="querySchdules" resultType="com.wyc.entity.Schdule">
+		select * from schdule where STREETNAME = #{street}
+		<if test="version != null and version != ''">
+			and version=#{version}
+		</if>
+		<choose>
+			<when test="version !=null and version != ''">
+				and version = #{version}
+			</when>
+			<otherwise>
+				and version = (select max(version) from schdule)
+			</otherwise>
+		</choose>
+	</select>
+
+	<update id="updateSchdules" parameterType="java.util.List">
+		update schdule set saveTime = now()
+		where id in
+		<foreach collection="list" index="index" item="item"
+			separator="," open="(" close=")">
+			#{item.id}
+		</foreach>
+	</update>
+	
+</mapper> 

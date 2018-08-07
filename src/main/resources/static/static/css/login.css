@@ -1,0 +1,133 @@
+.m_wrap {
+    position: relative;
+    width: 100vw;
+    height: 32.14vw;
+    padding: 3vw 20vw 0 20vw;
+    /* padding: 4vw 0 0 0; */
+}
+
+.m_content {
+    overflow: hidden;
+    /* width: 70vw; */
+    margin: 0 auto;
+}
+
+.m_left {
+    width: 22vw;
+    height: 22vw;
+    float: left;
+    margin: 0.5vw 0 0 0;
+}
+
+.yuansuWrap {
+    width: 100%;
+    height: 100%;
+}
+
+.m_right {
+    float: left;
+    margin: 0 0 0 8vw;
+}
+
+.m_right h3 {
+    color: white;
+    margin: 1vw 0 0 0;
+    font-size: 1.5vw;
+}
+
+.m_bgWrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+}
+
+.bgImg {
+    width: 100%;
+    height: 100%;
+}
+
+.yuansuImg {
+    width: 100%;
+    height: 100%;
+}
+
+.m_form-group01 input[type='text'],
+.m_form-group02 input[type='password'] {
+    height: 2.5vw;
+    padding: 0 0 0 2.5vw;
+    font-size: 0.8vw; 
+}
+
+.form-group button[type='button'] {
+    color: #003378;
+    background: #fecf08;
+    border: 1px solid #f1a701;
+    height: 3vw;
+    font-size: 1.1vw;
+    font-weight: bold;
+    width: 100%;
+}
+
+.m_form-group01 {
+    padding: 0 0.5vw 0 0.5vw;
+    margin: 0;
+    width: 25.5vw;
+    height: 2.6vw;
+}
+
+.m_form-group02 {
+    margin: 2vw 0 0 0;
+    padding: 0 0.5vw 0 0.5vw;
+}
+
+.m_form-group03 {
+    margin: 1vw 0 1.5vw 0;
+    padding: 0 0.5vw 0 0.5vw;
+    height: 0.9vw;
+    position: relative;
+}
+
+.m_form-group04 {
+    padding: 0 0.5vw 0 0.5vw;
+}
+
+.logoWrap {
+    width: 3.5vw;
+    height: 3.5vw;
+    margin: 0 auto;
+}
+
+.logoImg {
+    width: 100%;
+}
+
+.namelogDiv,
+.pwdlogDiv {
+    width: 2.5vw;
+    height: 2.5vw;
+    position: absolute;
+    top: 0;
+    left: 0.5vw;
+    padding: 0.5vw;
+}
+
+.pwdWord {
+    display: inline-block;
+    font-size: 0.8vw;
+    color: #fff;
+    position: absolute;
+    top: -0.3vw;
+    left: 1.6vw;
+}
+
+.nameImg,
+.pwdImg {
+    width: 100%;
+    vertical-align: top;
+}
+#check{
+    vertical-align: top;
+}

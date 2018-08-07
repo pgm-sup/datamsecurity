@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id='trunBtn'>中转</button>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="../lib/axios/axios-0.18.0.min.js"></script>
+    <script src="js/localStorge.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script> -->
+    <script>
+        $(function () {
+            $('#trunBtn').click(function () {
+                // axios.get('http://192.168.1.119:8080/admin/user?id=1').then(function(res){
+                //         console.log(res);
+                // })
+                console.log(localStorage.sessionId);
+                $.ajax({  
+                    type: "get",
+                    url: "http://192.168.1.119:8080/admin/user?id=1",
+                    headers: {
+                        'authorization': localStorage.sessionId,
+                        'Content-Type':'application/x-www-form-urlencoded'
+                    },
+                    success:function(res){
+                        console.log(res);
+                }
+                })
+            })
+        })
+    </script>
+
+</body>
+
+</html>
