@@ -4,6 +4,7 @@ import com.wyc.common.IConstants;
 import com.wyc.common.MyRealm;
 import com.wyc.entity.JsonBean;
 import com.wyc.entity.UserInfo;
+import com.wyc.log.SystemLog;
 import com.wyc.utils.ParamUtils;
 import org.apache.commons.collections.MapUtils;
 import org.apache.shiro.SecurityUtils;
@@ -47,6 +48,7 @@ public class AuthenticationController {
 
     @ResponseBody
     @RequestMapping(value = "/login_in", produces = "application/json;charset=UTF-8")
+    @SystemLog(module = "用户登录")
     public JsonBean loginIn(HttpServletRequest request) {
         JsonBean reJson = new JsonBean();
         Map paramMap = ParamUtils.handleServletParameter(request);

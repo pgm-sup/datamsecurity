@@ -5,7 +5,7 @@
 <mapper namespace="com.wyc.mapper.SixModuleMapper">
 	<insert id="addSixMoudle" parameterType="com.wyc.entity.SixModule">
 		insert into sixmodule
-		(id,street,subject1,subject2,subject3,custom,title1,title2,title3, title4,title5,title6,iframe1,iframe2,iframe3,iframe4,iframe5,iframe6,modal,modal1,modal2,modal3,modal4,modal5,modal6,version,saveTime,view)
+		(id,street,subject1,subject2,subject3,custom,title1,title2,title3, title4,title5,title6, title7,iframe1,iframe2,iframe3,iframe4,iframe5,iframe6, modal,modal1,modal2,modal3,modal4,modal5,modal6,modal7,version,saveTime,view)
 		values
 			(
 			id,
@@ -20,6 +20,7 @@
 			#{title4},
 			#{title5},
 			#{title6},
+			#{title7},
 			#{iframe1},
 			#{iframe2},
 			#{iframe3},
@@ -33,6 +34,7 @@
 			#{modal4},
 			#{modal5},
 			#{modal6},
+			#{modal7},
 			#{version},
 			now(),
 			#{view}

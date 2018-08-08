@@ -18,8 +18,8 @@ public class DatamServiceImpl implements DatamService {
 
     @Override
     public String getData(String params) throws UnsupportedEncodingException {
-        String url = "http://100.124.10.1:1521/dataset/json?" + params;
-//        String url = "http://10.242.181.48:11521/dataset/json?" + params;
+//        String url = "http://100.124.10.1:1521/dataset/json?" + params;
+        String url = "http://10.242.181.48:11521/dataset/json?" + params;
 
 //        // 存储相关的header值
 //        Map<String,String> header = new HashMap<String, String>();

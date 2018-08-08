@@ -80,6 +80,7 @@ public class STAdminController {
         String title4 = blockThreeObj.getString("title4");
         String title5 = blockThreeObj.getString("title5");
         String title6 = blockThreeObj.getString("title6");
+        String title7 = blockThreeObj.getString("title7");
         String iframe1 = blockThreeObj.getString("iframe1");
         String iframe2 = blockThreeObj.getString("iframe2");
         String iframe3 = blockThreeObj.getString("iframe3");
@@ -93,8 +94,9 @@ public class STAdminController {
         String modal4 = blockThreeObj.getString("modal4");
         String modal5 = blockThreeObj.getString("modal5");
         String modal6 = blockThreeObj.getString("modal6");
+        String modal7 = blockThreeObj.getString("modal7");
         
-        SixModule sixModule = new SixModule(street, subject1, subject2, subject3, custom, title1, title2, title3, title4, title5, title6, iframe1, iframe2, iframe3, iframe4, iframe5, iframe6, modal, modal1, modal2, modal3, modal4, modal5, modal6,version, view);
+        SixModule sixModule = new SixModule(street, subject1, subject2, subject3, custom, title1, title2, title3, title4, title5, title6, title7, iframe1, iframe2, iframe3, iframe4, iframe5, iframe6, modal, modal1, modal2, modal3, modal4, modal5, modal6, modal7,version, view);
         
 //        System.out.println(pollings);
 //        System.out.println(sixModule);

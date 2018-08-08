@@ -26,6 +26,8 @@ public class SixModule {
 
     private String title6;
 
+    private String title7;
+
     private String iframe1;
 
     private String iframe2;
@@ -52,6 +54,8 @@ public class SixModule {
 
     private String modal6;
 
+    private String modal7;
+
     private String version;
 
     private String saveTime;
@@ -63,8 +67,7 @@ public class SixModule {
     public SixModule() {
 	}
 
-
-    public SixModule(String street, String subject1, String subject2, String subject3, String custom, String title1, String title2, String title3, String title4, String title5, String title6, String iframe1, String iframe2, String iframe3, String iframe4, String iframe5, String iframe6, String modal, String modal1, String modal2, String modal3, String modal4, String modal5, String modal6, String version, Integer view) {
+    public SixModule(String street, String subject1, String subject2, String subject3, String custom, String title1, String title2, String title3, String title4, String title5, String title6, String title7, String iframe1, String iframe2, String iframe3, String iframe4, String iframe5, String iframe6, String modal, String modal1, String modal2, String modal3, String modal4, String modal5, String modal6, String modal7, String version, Integer view) {
         this.street = street;
         this.subject1 = subject1;
         this.subject2 = subject2;
@@ -76,6 +79,7 @@ public class SixModule {
         this.title4 = title4;
         this.title5 = title5;
         this.title6 = title6;
+        this.title7 = title7;
         this.iframe1 = iframe1;
         this.iframe2 = iframe2;
         this.iframe3 = iframe3;
@@ -89,6 +93,7 @@ public class SixModule {
         this.modal4 = modal4;
         this.modal5 = modal5;
         this.modal6 = modal6;
+        this.modal7 = modal7;
         this.version = version;
         this.view = view;
     }
@@ -319,6 +324,21 @@ public class SixModule {
         this.saveTime = saveTime;
     }
 
+    public String getTitle7() {
+        return title7;
+    }
+
+    public void setTitle7(String title7) {
+        this.title7 = title7;
+    }
+
+    public String getModal7() {
+        return modal7;
+    }
+
+    public void setModal7(String modal7) {
+        this.modal7 = modal7;
+    }
 
     @Override
     public String toString() {
@@ -335,6 +355,7 @@ public class SixModule {
                 ", title4='" + title4 + '\'' +
                 ", title5='" + title5 + '\'' +
                 ", title6='" + title6 + '\'' +
+                ", title7='" + title7 + '\'' +
                 ", iframe1='" + iframe1 + '\'' +
                 ", iframe2='" + iframe2 + '\'' +
                 ", iframe3='" + iframe3 + '\'' +
@@ -348,6 +369,7 @@ public class SixModule {
                 ", modal4='" + modal4 + '\'' +
                 ", modal5='" + modal5 + '\'' +
                 ", modal6='" + modal6 + '\'' +
+                ", modal7='" + modal7 + '\'' +
                 ", version='" + version + '\'' +
                 ", saveTime='" + saveTime + '\'' +
                 ", view=" + view +
